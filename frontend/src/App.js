@@ -1,16 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 import Licenses from './components/Licenses';
-import RegisterLicense from './components/RegisterLicense';
+import RegisterLicensePage from './components/RegisterLicensePage';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/licenses" element={<Licenses />} />
-        <Route path="/register-license" element={<RegisterLicense />} />
+        <Route path="/register-license" element={<RegisterLicensePage />} />
       </Routes>
     </Router>
   );
